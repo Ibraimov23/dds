@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap');
+body {
+  /* background: url("../images/bg.jpg") no-repeat fixed; */
+  background-size: cover;
+
+  color: #fff;
+}
+.main-bg{
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, 0);
+  text-align: center;
+}
+.main-bg_group{
+  height: 100%;
+  width: 100%;
+}
+#lightning{
+  fill: url(#lin-g6);
+}
+#lightning_2{
+  fill: url(#lin-g5);
+}
+#lightning_3{
+  fill: url(#lin-g3);
+}
+#lightning_4{
+  fill: url(#lin-g1);
+}
+#lightning_5{
+  fill: url(#lin-g4);
+}
+#lightning_6{
+  fill: url(#lin-g2);
+}
+.matches-img{
+  width: 480px;
+}
+.container {
+  width: 1484px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+
+header,main{
+  position: relative;
+  z-index: 10;
+}
+header {
+  padding-top: 109px;
+  padding-bottom: 31px;
+  z-index: 10;
+}
+.header__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  width: 1288px;
+  padding: 0 10px;
+  position: relative;
+  margin: 0 auto;
+  min-height: 138px;
+}
+.eclipse {
+  position: absolute;
+  width: 300px !important;
+  height: 41px !important;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  /* line-height: 19px; */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  background-image: url('../fonts/eclipse.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #FFFFFF;
+  transform: translate(0, 30px);
+}
+
+.data-item {
+  opacity: 1;
+  transition: 0.6s cubic-bezier(0.37, 0, 0.63, 1);
+}
+.data-item.inactive {
+  opacity: 0;
+  margin: 0 60px;
+  z-index: -1;
+  transition: 0.6s cubic-bezier(0.37, 0, 0.63, 1);
+}
+@keyframes hiding {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.data-item.active {
+  /* position: initial; */
+  transition: 0.6s cubic-bezier(0.37, 0, 0.63, 1);
+
+  opacity: 1;
+  z-index: -1;
+  margin: 0 60px;
+  visibility: visible;
+  /* animation: showing 0.8s ease-in-out; */
+}
+
+@keyframes showing {
+  0% {
+    /* position: relative; */
+    opacity: 0;
+    z-index: -1;
+  }
+  100% {
+    opacity: 1;
+    z-index: -1;
+  }
+}
+
+.bets {
+  z-index: -1;
+}
+.mob {
+  width: 430px;
+  height: 266px;
+  position: absolute;
+  overflow: hidden;
+  transform: translate(0, -94px);
+}
+.mob img {
+  position: absolute;
+  transform: translate(70px, -25px);
+  z-index: -1;
+}
+.ball {
+  position: absolute;
+  z-index: 3;
+  transform: translate(162px, -132px) scale(0.4);
+}
+.bets .data-item.active .ball {
+
+}
+.bets .data-item.inactive .ball {
+  z-index: 4;
+  transform: translate(-1046px, -371px);
+}
+
+@keyframes ballOut {
+  0% {
+  }
+  25% {
+    z-index: -1;
+    transform: translate(203px, -132px) scale(0.4);
+  }
+  100% {
+    z-index: 4;
+    transform: translate(-5px, -102px) scale(1) rotate(40deg);
+  }
+}
+@keyframes ballKick {
+  0% {
+  }
+  100% {
+    transform: translate(-1046px, -371px);
+  }
+}
+
+.coin {
+  position: absolute;
+  transform: translate(51px, -41px) scale(0);
+  z-index: -1;
+}
+.bets .data-item.active .coin {
+  animation: coinOut 0.5s linear forwards 0.6s;
+}
+.bets .data-item.inactive .coin {
+  z-index: 3;
+  transform: translate(45px, -41px) scale(1);
+}
+@keyframes coinOut {
+  0% {
+  }
+  10% {
+    z-index: 1;
+  }
+  25% {
+    transform: translate(211px, -86px) scale(0.4);
+  }
+  50% {
+    z-index: 3;
+    transform: translate(281px, -96px) scale(0.6);
+  }
+  75% {
+    transform: translate(201px, -76px) scale(0.8);
+  }
+  100% {
+    z-index: 3;
+    transform: translate(45px, -41px) scale(1);
+  }
+}
+
+.lines {
+  overflow: hidden;
+  position: absolute;
+  height: 210px;
+  width: 341px;
+  transform: translate(67px, -69px) scaleX(-1);
+}
+
+.lines div {
+  position: absolute;
+  width: 0px;
+  overflow: hidden;
+}
+.bets .data-item.active .lines div {
+  animation: lines 0.2s linear forwards 0.9s;
+}
+
+.bets .data-item.inactive .lines div {
+  width: 271px;
+}
+
+.lines div img {
+  transform: scaleX(-1);
+}
+@keyframes lines {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 271px;
+  }
+}
+
+.matches {
+  display: flex;
+  justify-content: space-between;
+
+  width: 547px;
+}
+
+.matches img:nth-child(2) {
+  position: absolute;
+
+  z-index: 1;
+  width: 47px;
+  height: 47px;
+
+  animation: bounce 0.6s cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  from {
+    transform: translate3d(-290px, 30px, 0px);
+  }
+  to {
+    transform: translate3d(-290px, 66px, 0px);
+  }
+}
+@keyframes ballJump {
+  0% {
+    height: 27px;
+  }
+  20% {
+    height: 47px;
+  }
+  50% {
+    transform: translateY(-1px);
+    border-radius: 50%;
+  }
+  95% {
+    height: 47px;
+  }
+  100% {
+    height: 27px;
+  }
+}
+.bonus {
+  justify-self: center;
+}
+
+.buttonBonus {
+  animation: buttonUp 2.5s linear alternate infinite;
+}
+
+@keyframes buttonUp {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  30% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.condition {
+  transform: translate(50px, 87px);
+  position: absolute;
+  width: 96%;
+  left:-20px;
+}
+@media(max-width:1600px){
+  .condition{
+    left:0;
+  }
+}
+.condition marquee {
+  color: #fff;
+  opacity: .8;
+  width: calc(100% - 40px);
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 35px;
+  line-height: 16px;
+}
+
+.main__inner {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+}
+.teams {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.getMoney {
+  overflow: hidden;
+  background: #da5035;
+  border-radius: 3px;
+  height: 38px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+.getMoney::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 30%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    hsla(9, 73%, 74%, 0),
+    #ed998a 50%,
+    hsla(9, 73%, 74%, 0)
+  );
+  z-index: -1;
+
+  transform: skewX(-15deg) translateX(-300%);
+
+  animation: chromaLine 3s linear infinite;
+}
+
+@keyframes chromaLine {
+  0% {
+    transform: skewX(-15deg) translateX(-300%);
+  }
+  30% {
+    transform: skewX(-15deg) translateX(360%);
+  }
+  100% {
+    transform: skewX(-15deg) translateX(360%);
+  }
+}
+
+
+.eclipse{
+    cursor:default;
+}
+.eclipse::selection {
+background: none;
+color:none;
+}
+.eclipse::-moz-selection {
+background: none;
+color:none;
+}
+
+
+.background{
+  position: fixed;
+  height: 100%;
+  background: radial-gradient(111.48% 111.48% at 24.17% -15.74%, #28C3EC 0%, #6944B3 100%);
+  overflow: hidden;
+  opacity: .7;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 5;
+}
+.background > svg{
+  /*clip-path: circle(0.5% at 0 0);*/
+  fill: linear-gradient(122deg, rgba(40,195,236,0.9976365546218487) 0%, rgba(0,0,0,0) 100%);
+}
+.background > svg.th1{
+  position: absolute;
+  animation: background_animation 10s .6s ease-in infinite;
+  left:-30%;
+  /*transform: rotate(10deg);*/
+}
+.background > svg.th2{
+  position: absolute;
+  animation: background_animation 13s .4s ease-in infinite;
+  /*transform: rotate(-10deg);*/
+  left:-10%;
+}
+.background > svg.th3{
+  position: absolute;
+  animation: background_animation 12s .9s ease-in infinite;
+  left:10%;
+  /*transform: rotate(13deg);*/
+}
+.background > svg.th4{
+  position: absolute;
+  animation: background_animation 14s .5s ease-in infinite;
+  left:30%;
+  /*transform: rotate(4deg);*/
+}
+.background > svg.th5{
+  position: absolute;
+  animation: background_animation 9s 1s ease-in infinite;
+  /*transform: rotate(-4deg);*/
+  left:50%;
+}
+.content{
+  margin-left: 10px;
+  margin-right: 10px;
+  height:800px;
+}
+.content > .inner{
+  width: 100%;
+  height: 100%;
+  margin:0 auto;
+  background-color: #c4c4c4;
+}
