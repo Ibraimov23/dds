@@ -68,9 +68,8 @@ header {
 }
 .eclipse {
   position: absolute;
-  bottom: 8px;
   width: 300px !important;
-  height: 35px !important;
+  height: 30px !important;
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
