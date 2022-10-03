@@ -41,7 +41,7 @@ body {
   width: 480px;
 }
 .container {
-  width: 1484px;
+  max-width: 1484px;
   padding: 0 10px;
   margin: 0 auto;
 }
@@ -474,6 +474,7 @@ color:none;
   margin-left: 10px;
   margin-right: 10px;
   height:800px;
+  z-index: 10;
 }
 .content > .inner{
   width: 100%;
