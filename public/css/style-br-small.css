@@ -272,6 +272,8 @@ body {
 .p-abs {
   position: absolute;
   top:0;
+  height: 100%;
+  width: 100%;
 }
 
 .fluid-center-block {
