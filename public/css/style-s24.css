@@ -211,7 +211,7 @@ body {
   animation: a 3s linear infinite
 }
 header {
-    padding-top: 1%;
+    padding-top: 15px !important;
     padding-bottom: 31px;
     z-index: 10;
 }
@@ -229,7 +229,16 @@ header {
 
 
 }
-
+.header__inner  {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.data-item.active {
+  margin: 0px !important;
+}
+.matches {
+  width: auto !important;
+}
 .header__wrap {
   will-change: transform;
   -webkit-perspective: 1000px;
@@ -1515,7 +1524,6 @@ transform: scale(1.0) translate(0%,0%) rotate(0deg);
     transform: translateX(100%) rotate(120deg);
   }
 }
-
 @media (max-width:1902px) {
   .fluid-center-block {
 
@@ -1543,7 +1551,23 @@ transform: scale(1.0) translate(0%,0%) rotate(0deg);
 }
 
 
-
+@media (max-width: 1283px) {
+  .header__inner {
+    width: 931px !important;
+}
+.header__inner h1 img { 
+    width: 220px !important
+}
+.matches .data-item img:nth-child(1) { 
+    width: 453px !important;
+}
+.bonus div img {
+    width: 163px !important;
+}
+.buttonBonus {
+    width: 156px !important;
+}
+}
 
 @media (max-width:1262px) {
 
